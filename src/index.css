@@ -11,5 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
- /* git commit -m "first commit | basic template and two buttons for deleting text and to convert to upper case" */
+/* #root{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+} */

@@ -1,7 +1,16 @@
+:root{
+  --primary:rgba(125, 245, 245, 0.046);
+  --secondry:rgba(20, 29, 45, 0.6);
+}
 body {
   background-color: rgb(177, 240, 219);
   color: white;
   box-sizing: border-box;
+  background-image: url("https://www.fgdc.gov/img/slider/slider-bg-network.jpg/image");
+  background-repeat: no-repeat;
+  background-size:cover;
+  
+
 }
 
 nav {
@@ -9,9 +18,9 @@ nav {
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
+  background:var(--primary);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -33,8 +42,8 @@ h1 {
   padding-top: 10px;
 }
 .text_body {
-  height: 80vh;
-  background: rgba(255, 255, 255, 0.25);
+  height: 70vh;
+  background:var(--primary);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -42,8 +51,10 @@ h1 {
   padding: 10px;
 }
 textarea {
+  padding: 30px;
+  color: #ffffff;
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -52,10 +63,10 @@ textarea {
 }
 .options_body {
   width: 50%;
-  height: 80vh;
+  height: 70vh;
   margin: 10px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -68,8 +79,8 @@ textarea {
   width: 96%;
   padding: 10px;
   opacity: 0.8;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.2);
+  overflow: clip;
+  background:var(--primary);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -82,29 +93,37 @@ textarea {
   justify-content: space-around;
   align-items: center;
   width: 97%;
-  height: 50vh;
+  height: 20vh;
 }
 
 button {
   margin: 15px;
-  color: rgb(22, 17, 17);
+  color: rgb(255, 255, 255);
   border: none;
   text-align: center;
   width: 120px;
   height: 30px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+   transition: all 0.2s ease-in-out;
 }
 button:hover {
   cursor: pointer;
   width: 123px;
   height: 33px;
-  background-color: rgba(20, 29, 45, 0.6);
-  transition: all 0.2s ease-in-out;
+  background-color: var(--secondry);
+ 
+}
+
+button:active{
+  transform: scale(0.9);
+}
+::placeholder {
+  font-size: 20px;
 }
 
 /* .textField_div{
@@ -112,9 +131,7 @@ button:hover {
   justify-content: space-between;
 }
 
-::placeholder {
-  font-size: 20px;
-}
+
 
 
 .text_box {
