@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./Textfield.css";
 
-export default function Textfield() {
+export default function Textfield(props) {
   const handleOnchange = (event) => {
     setText(event.target.value);
   };
@@ -50,9 +50,9 @@ export default function Textfield() {
   const handleDownClick = () => {
     setText(text.toLowerCase());
   };
-  const themeChange = () => {
-    // setTheme(!theme);
-  };
+  // const themeChange = () => {
+  //   // setTheme(!theme);
+  // };
 
   const handleExtraSpace = () => {
     let newText = text.split(/[ ]+/);
@@ -64,13 +64,13 @@ export default function Textfield() {
 
   return (
     <>
-      <nav>
+      <nav style={{ backgroundColor: `${props.theme}` }}>
         <div className='logo'>
           <h1>Text Editor </h1>
         </div>
         <div>
           <label className='switch'>
-            <input type='checkbox' onClick={themeChange} />
+            <input type='checkbox' onClick={props.toggletheme} />
             <span className='slider'></span>
           </label>
         </div>
@@ -86,10 +86,14 @@ export default function Textfield() {
             value={text}
             onChange={handleOnchange}
             placeholder=' Enter Text Here '
+            style={{ backgroundColor: `${props.theme}` }}
           ></textarea>
         </div>
 
-        <div className='options_body'>
+        <div
+          className='options_body'
+          style={{ backgroundColor: `${props.theme}` }}
+        >
           <div className='preview_box'>
             <p>{text}</p>
           </div>
